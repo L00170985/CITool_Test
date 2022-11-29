@@ -13,6 +13,9 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
+//import org.junit.After;	
+//import org.junit.Before;		
+//import org.junit.Test;
 
 import com.opencsv.CSVReader;
 import com.opencsv.exceptions.CsvValidationException;
@@ -20,14 +23,16 @@ import com.opencsv.exceptions.CsvValidationException;
 public class KeyWrdSearch {
 	
 	WebDriver driver = null; 
-	String CSVPath;// = System.getProperty("user.dir")+"\\src\\main\\resources\\TestData.csv";
+	String CSVPath, driverpath;// = System.getProperty("user.dir")+"\\src\\main\\resources\\TestData.csv";
 	String[] csvCell;
 	CSVReader csvReader = null;// = new CSVReader(new FileReader(CSVPath));
 	@BeforeTest
+	//@Before
 	public void SetUp() throws FileNotFoundException {
 		
-		
-		System.setProperty("webdriver.chrome.driver", "\\src\\main\\resources\\chromedriver.exe");
+		driverpath = System.getProperty("user.dir")+"\\src\\main\\resources\\chromedriver.exe";
+		System.setProperty("webdriver.chrome.driver", driverpath);
+		//System.setProperty("webdriver.chrome.driver", "C:\\Users\\Kani\\Downloads\\chromedriver_win32\\chromedriver.exe");
 	    driver = new ChromeDriver();
 	    CSVPath = System.getProperty("user.dir")+"\\src\\main\\resources\\TestData.csv";
 	    csvReader = new CSVReader(new FileReader(CSVPath));
@@ -57,7 +62,7 @@ public class KeyWrdSearch {
 	}
 	
 	@AfterTest
-  
+	//@After
     public void Close() {
 		
 		
