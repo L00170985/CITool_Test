@@ -78,6 +78,7 @@
 							<suiteXmlFile>testng.xml</suiteXmlFile>
 						</suiteXmlFiles>
 						<!--reportsDirectory>${project.basedir}/Reports/TestReport_${timestamp}</reportsDirectory>-->
+						<testFailureIgnore>true</testFailureIgnore>
 					</configuration>
 				</plugin>
 			</plugins>
